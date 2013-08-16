@@ -18,7 +18,3 @@ def scrape
   end 
   def_hash
 end
-<<<<<<< HEAD
-p scrape
-=======
->>>>>>> card_and_deck
