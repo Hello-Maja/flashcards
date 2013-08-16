@@ -18,4 +18,3 @@ def scrape
   end 
   def_hash
 end
-p scrape

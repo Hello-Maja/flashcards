@@ -1,28 +1,33 @@
+require_relative 'flashcards.rb'
+
 class Deck
+  attr_reader :deck
 
-      attr_reader :deck
-
-  def initialize(cards)
-    @cards = cards
+  def initialize(hash)
+    @hash = hash
     @deck = []
   end
 
   def create_deck
-    @cards.each do |term, definition|
+    @hash.each do |term, definition|
       card = Card.new(term,definition)
-      deck << card
+      @deck << card
+    end
+    @deck
   end
 
-  end
 end
 
 class Card
-
   attr_reader :term, :definition 
 
-  def initialize(term,definition)
+  def initialize(term, definition)
     @term = term
     @definition = definition
   end
 
 end
+
+deck = Deck.new(scrape)
+p deck.create_deck
+
